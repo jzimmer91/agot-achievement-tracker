@@ -1,63 +1,264 @@
 {
   "achievementlists": [
     {
-      "id": 0,
+      "id": 1,
       "title": "Brighton Charity Joust 2019",
-      "achievements": [{
-        "id": 0,
-        "title": "test 1",
-        "description": "description",
-        "points": 1
-      },{
-        "id": 1,
-        "title": "test 2",
-        "description": "description",
-        "points": 2
-      },{
-        "id": 2,
-        "title": "test 3",
-        "description": "description",
-        "points": 3
-      }]
+      "achievements": [
+        {
+          "id": 1,
+          "title": "test 1",
+          "description": "description",
+          "points": 1
+        },
+        {
+          "id": 2,
+          "title": "test 2",
+          "description": "description",
+          "points": 2
+        },
+        {
+          "id": 3,
+          "title": "test 3",
+          "description": "description",
+          "points": 3
+        }
+      ]
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "Brighton Charity Joust 2018",
-      "achievements": [{
-        "id": 0,
-        "title": "test 1",
-        "description": "description",
-        "points": 1
-      },{
-        "id": 1,
-        "title": "test 2",
-        "description": "description",
-        "points": 2
-      },{
-        "id": 2,
-        "title": "test 3",
-        "description": "description",
-        "points": 3
-      }]
+      "achievements": [
+        {
+          "id": 1,
+          "title": "test 1",
+          "description": "description",
+          "points": 1
+        },
+        {
+          "id": 2,
+          "title": "test 2",
+          "description": "description",
+          "points": 2
+        },
+        {
+          "id": 3,
+          "title": "test 3",
+          "description": "description",
+          "points": 3
+        }
+      ]
     }
   ],
   "sessions": [
     {
-      "id": 0,
+      "id": 1,
+      "name": "Brighton Charity Joust 2019",
       "achievement_list": 0,
-      "players": [{
-        "player_id": 1,
-        "player_name": "Joe Zimmer",
-        "faction": "Greyjoy",
-        "agenda": "House with the red door",
-        "completed_achievements": [0,2]
-      },{
-        "player_id": 1,
-        "player_name": "Gabbi Trimmings",
-        "faction": "Lannister",
-        "agenda": "Banner of the Sun",
-        "completed_achievements": [1,2]
-      }]
+      "players": [
+        {
+          "id": 1,
+          "jp_id": 1,
+          "name": "Joe Zimmer",
+          "faction": "Greyjoy",
+          "agenda": "House with the red door",
+          "completed_achievements": [
+            0,
+            2
+          ]
+        },
+        {
+          "id": 2,
+          "player_name": "Gabbi Trimmings",
+          "faction": "Lannister",
+          "agenda": "Banner of the Sun",
+          "completed_achievements": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Brighton SC",
+      "achievement_list": 1,
+      "players": [
+        {
+          "id": 2420,
+          "name": "Alex O'fee-worth",
+          "faction": "Tyrell",
+          "agenda": "The Wars To Come",
+          "completed_achievements": []
+        },
+        {
+          "id": 1937,
+          "name": "Joe Zimmer",
+          "faction": "Greyjoy",
+          "agenda": "The House With the Red Door",
+          "completed_achievements": []
+        },
+        {
+          "id": 6036,
+          "name": "Martin Lewis",
+          "faction": "Martell",
+          "agenda": "Assault from the Shadows",
+          "completed_achievements": []
+        },
+        {
+          "id": 1680,
+          "name": "George Ankers",
+          "faction": "Night's Watch",
+          "agenda": "\"The Rains of Castamere\"",
+          "completed_achievements": []
+        },
+        {
+          "id": 2410,
+          "name": "Dan Williams",
+          "faction": "Stark",
+          "agenda": "Fealty",
+          "completed_achievements": []
+        },
+        {
+          "id": 1936,
+          "name": "Gabbi Trimmings",
+          "faction": "Lannister",
+          "agenda": "Banner of the Sun",
+          "completed_achievements": []
+        },
+        {
+          "id": 93,
+          "name": "Kevin Richardson",
+          "faction": "Martell",
+          "agenda": "Assault from the Shadows",
+          "completed_achievements": []
+        },
+        {
+          "id": 6286,
+          "name": "Alfie Gleeson",
+          "faction": "Night's Watch",
+          "agenda": "Sea of Blood",
+          "completed_achievements": []
+        },
+        {
+          "id": 8017,
+          "name": "Jim Beckham",
+          "faction": "Greyjoy",
+          "agenda": "Fealty",
+          "completed_achievements": []
+        },
+        {
+          "id": 2415,
+          "name": "Calvin Green",
+          "faction": "Martell",
+          "agenda": "The Lord of the Crossing",
+          "completed_achievements": []
+        },
+        {
+          "id": 13122,
+          "name": "Enrique Varea",
+          "faction": "Tyrell",
+          "agenda": "The Lord of the Crossing",
+          "completed_achievements": []
+        },
+        {
+          "id": 12819,
+          "name": "Alexander Hoppen",
+          "faction": "Tyrell",
+          "agenda": "Banner of the Wolf",
+          "completed_achievements": []
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Brighton SC",
+      "achievement_list": 1,
+      "players": [
+        {
+          "id": 2420,
+          "name": "Alex O'fee-worth",
+          "faction": "Tyrell",
+          "agenda": "The Wars To Come",
+          "completed_achievements": []
+        },
+        {
+          "id": 1937,
+          "name": "Joe Zimmer",
+          "faction": "Greyjoy",
+          "agenda": "The House With the Red Door",
+          "completed_achievements": []
+        },
+        {
+          "id": 6036,
+          "name": "Martin Lewis",
+          "faction": "Martell",
+          "agenda": "Assault from the Shadows",
+          "completed_achievements": []
+        },
+        {
+          "id": 1680,
+          "name": "George Ankers",
+          "faction": "Night's Watch",
+          "agenda": "\"The Rains of Castamere\"",
+          "completed_achievements": []
+        },
+        {
+          "id": 2410,
+          "name": "Dan Williams",
+          "faction": "Stark",
+          "agenda": "Fealty",
+          "completed_achievements": []
+        },
+        {
+          "id": 1936,
+          "name": "Gabbi Trimmings",
+          "faction": "Lannister",
+          "agenda": "Banner of the Sun",
+          "completed_achievements": []
+        },
+        {
+          "id": 93,
+          "name": "Kevin Richardson",
+          "faction": "Martell",
+          "agenda": "Assault from the Shadows",
+          "completed_achievements": []
+        },
+        {
+          "id": 6286,
+          "name": "Alfie Gleeson",
+          "faction": "Night's Watch",
+          "agenda": "Sea of Blood",
+          "completed_achievements": []
+        },
+        {
+          "id": 8017,
+          "name": "Jim Beckham",
+          "faction": "Greyjoy",
+          "agenda": "Fealty",
+          "completed_achievements": []
+        },
+        {
+          "id": 2415,
+          "name": "Calvin Green",
+          "faction": "Martell",
+          "agenda": "The Lord of the Crossing",
+          "completed_achievements": []
+        },
+        {
+          "id": 13122,
+          "name": "Enrique Varea",
+          "faction": "Tyrell",
+          "agenda": "The Lord of the Crossing",
+          "completed_achievements": []
+        },
+        {
+          "id": 12819,
+          "name": "Alexander Hoppen",
+          "faction": "Tyrell",
+          "agenda": "Banner of the Wolf",
+          "completed_achievements": []
+        }
+      ],
+      "id": 3
     }
   ]
 }

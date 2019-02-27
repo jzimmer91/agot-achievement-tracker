@@ -11,7 +11,7 @@
         v-model="selectedTournament"
         :items="tournamentOptions"
         item-text="tournament_name"
-        item-value="tournament_id"
+        return-object
         placeholder="Choose your tournament"
         label="Tournament"
         outline
@@ -42,11 +42,10 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "Home",
-  mounted() {
+  created() {
     this.getAchievementLists();
     this.getJPTournaments();
   },
@@ -98,7 +97,39 @@ export default {
     generateAchievementSession() {
       console.log("load up tournament", this.selectedTournament, this.selectedAchievementList);
       //fetch tourney from jp;
-      //post /session  with player data and linked achievement list
+      this.$http
+        .get(
+          `https://thejoustingpavilion.com/api/v3/tournaments/${
+            this.selectedTournament.tournament_id
+          }`
+        )
+        .then(res => {
+          console.log('tourney data!', res.data)
+          let players = res.data.map(({
+            player_id, player_name, faction, agenda
+          }) => {
+            return {
+              id: player_id,
+              name: player_name,
+              faction: faction,
+              agenda: agenda,
+              completed_achievements: []
+            }
+          })
+          //post /session  with player data and linked achievement list
+          this.$http.post(`${process.env.VUE_APP_DATA_SOURCE}/sessions`, {
+            name: this.selectedTournament.tournament_name,
+            achievement_list: this.selectedAchievementList,
+            players: players
+          })
+          .then(res => {
+            console.log('create tournament response', res);
+            this.$router.push({path: `/tournament/${res.data.id}`})
+          })
+        })
+        .catch(err => {
+          console.log("get err", err);
+        });
     }
   }
 };
