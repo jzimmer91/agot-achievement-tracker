@@ -1,6 +1,11 @@
 <template>
   <div>
-    <h1>AGOT Achievement Tracker</h1>
+
+    <div class="title-area">
+      <h1>AGOT Achievement Tracker</h1>
+      <h3>Select your tournament and the achievement list you would like to use to get started.</h3>
+    </div>
+
     <v-flex xs12 sm6 d-flex>
       <v-select
         v-model="selectedTournament"
@@ -30,7 +35,7 @@
         color="success"
         @click="generateAchievementSession"
         :disabled="!areOptionsSelected"
-        >Go</v-btn
+        >Create your tracker</v-btn
       >
     </v-flex>
   </div>
@@ -100,4 +105,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+  .title-area {
+    margin: 1em 0em;
+  }
+</style>
