@@ -17,8 +17,8 @@
       <v-select
         v-model="selectedAchievementList"
         :items="achievementLists"
-        item-text="achievement_list_name"
-        item-value="achievement_list_id"
+        item-text="title"
+        item-value="id"
         placeholder="Choose your achievement list"
         label="Achievement List"
         outline
@@ -38,44 +38,19 @@
 
 <script>
 import axios from "axios";
-import db from '@/firebase'
 
 export default {
   name: "Home",
   mounted() {
-    console.log("log this", this);
-    this.$http
-      .get(
-        `https://thejoustingpavilion.com/api/v3/tournaments?after=${
-          this.oneWeekAgo
-        }`
-      )
-      .then(res => {
-        console.log("jp res", res);
-        this.tournamentOptions = res.data;
-      })
-      .catch(err => {
-        console.log("get err", err);
-      });
-  },
-  firestore: {
-    achievementLists: db.ref('achievementlists'), // this is a correct ref, i checked using my db browser and entering in this ref link
+    this.getAchievementLists();
+    this.getJPTournaments();
   },
   data: () => {
     return {
       selectedTournament: "",
       selectedAchievementList: "",
       tournamentOptions: [],
-      achievementLists: [
-        // {
-        //   achievement_list_id: 1,
-        //   achievement_list_name: "Brighton Charity Joust 2018"
-        // },
-        // {
-        //   achievement_list_id: 2,
-        //   achievement_list_name: "Brighton Charity Joust 2019"
-        // }
-      ]
+      achievementLists: []
     };
   },
   computed: {
@@ -89,8 +64,36 @@ export default {
     }
   },
   methods: {
+    getAchievementLists(){
+      this.$http
+        .get(`${process.env.VUE_APP_DATA_SOURCE}/achievementlists`)
+        .then(res => {
+          this.achievementLists = res.data;
+        })
+        .catch(err => {
+          console.log("get err", err);
+        });
+    },
+
+    getJPTournaments(){
+      this.$http
+        .get(
+          `https://thejoustingpavilion.com/api/v3/tournaments?after=${
+            this.oneWeekAgo
+          }`
+        )
+        .then(res => {
+          this.tournamentOptions = res.data;
+        })
+        .catch(err => {
+          console.log("get err", err);
+        });
+    },
+
     generateAchievementSession() {
-      console.log("load up tournament", this.selectedTournament);
+      console.log("load up tournament", this.selectedTournament, this.selectedAchievementList);
+      //fetch tourney from jp;
+      //post /session  with player data and linked achievement list
     }
   }
 };
