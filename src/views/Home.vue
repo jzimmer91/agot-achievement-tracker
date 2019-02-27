@@ -38,6 +38,7 @@
 
 <script>
 import axios from "axios";
+import db from '@/firebase'
 
 export default {
   name: "Home",
@@ -56,6 +57,9 @@ export default {
       .catch(err => {
         console.log("get err", err);
       });
+  },
+  firestore: {
+    achievementLists: db.ref('achievementlists'), // this is a correct ref, i checked using my db browser and entering in this ref link
   },
   data: () => {
     return {
